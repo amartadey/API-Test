@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  flex-direction: column;
+  font-family: "Muli", sans-serif;
+  display: flex;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+main .card {
+  width: 300px;
+  margin: 15px;
+  background: #020028;
+  border-radius: 5px;
+
+  overflow: hidden;
+}
+main .text-section {
+  padding: 10px;
+}
+
+main .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  line-height: 0;
+}
+main h3 {
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+main .details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .details small {
+  font-size: 12px;
+  opacity: 0.8;
+}
+main .details p {
+  border: 2px solid;
+  font-size: 13px;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+main .details p.green {
+  border-color: #05f505;
+}
+main .details p.red {
+  border-color: red;
+}
+
+main .details p.yellow {
+  border-color: yellow;
+}
+main .details p.noname {
+  border-color: transparent;
+}
+
+header .search-box {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  padding: 20px;
+}
+header .search-box input.search {
+  width: 600px;
+  max-width: 80%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  padding: 6px 12px;
+  font-size: 16px;
+  color: #02002a;
+}
+header .search-box input.search:focus {
+  outline: none;
+}
+
+header.results-show .search-box {
+  height: 60px;
+  background: rgb(34, 193, 195);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    278deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  width: 100%;
+}
+header.results-show .search-box input.search {
+  height: 40px;
+}
