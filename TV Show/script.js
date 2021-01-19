@@ -1,6 +1,6 @@
 const main = document.querySelector("#main");
 const header = document.querySelector("#header");
-const API_URL = "http://api.tvmaze.com/";
+const API_URL = "https://api.tvmaze.com/";
 const input = document.querySelector("#search");
 
 const localQuery = localStorage.getItem("query");
