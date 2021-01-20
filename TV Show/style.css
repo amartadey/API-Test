@@ -43,10 +43,12 @@ main .text-section {
 }
 
 main .card img {
-  width: 100%;
   height: auto;
   border-radius: 5px;
   line-height: 0;
+  width: 300px;
+  height: 422px;
+  object-fit: cover;
 }
 main h3 {
   font-size: 18px;
