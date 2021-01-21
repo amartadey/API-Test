@@ -49,9 +49,12 @@ function createBanners(datas) {
                       <h2>${data.name.substring(0, 20)}</h2>
                       <span class="tag"><b>${data.language}</b></span>
                       <span class="tag">${data.premiered.substring(0, 4)}</span>
-                      <span class="tag"><b>${
-                        data.network.country.code
-                      }</b></span>
+                      ${
+                        data.network.country
+                          ? `<span class="tag"><b>${data.network.country.code}</b></span>`
+                          : ""
+                      }
+                      
                       <span class="tag"><b>${data.genres[0]}</b></span>
                       <span class="tag">${data.network.name}</span>
                       ${data.summary.substring(0, 150)}...</p>
@@ -93,29 +96,33 @@ function currentEpisode() {
       const latestContainer = document.querySelector("#latest-container");
       const slider = document.createElement("div");
       slider.classList.add("slide-slider", "owl-carousel", "owl-theme");
+
       res.data.slice(-10).forEach((latest) => {
+        console.log(latest);
         const owlitem = document.createElement("div");
         owlitem.className = "owl-items";
         owlitem.innerHTML = `
                   <a class="slide-one" href="season.html">
                     <div class="slide-image">
-                      <img src="images/s5.jpg" alt="image" />
+                      <img src="${latest.show.image.original}" alt="image" />
                     </div>
                     <div class="slide-content">
                       <h2>
-                        Made in haven
+                        ${latest.show.name}
                         <img
                           src="images/plus.png"
                           alt="icon"
                           class="add-wishlist"
                         />
                       </h2>
-                      <p>
-                        Radhe is a singing prodigy determined to follow in the
-                        classical footsteps of his grandfather.
-                      </p>
+                      <p>${
+                        latest.show.summary
+                          ? latest.show.summary.substr(0, 50)
+                          : ""
+                      }</p>
+                      
                       <span class="tag">2 h 20 min</span>
-                      <span class="tag">2020</span>
+                      <span class="tag">${latest.airdate}</span>
                       <span class="tag"><b>HD</b></span>
                       <span class="tag"><b>16+</b></span>
                     </div>
@@ -124,7 +131,43 @@ function currentEpisode() {
         slider.appendChild(owlitem);
       });
       latestContainer.appendChild(slider);
+      runSlider();
     })
     .catch((err) => console.log(err));
 }
 currentEpisode();
+
+function runSlider() {
+  $(".slide-slider").owlCarousel({
+    loop: true,
+    margin: 15,
+    nav: true,
+    autoplay: false,
+    dots: false,
+    items: 4,
+    navText: [
+      '<img src="images/left.png" alt="icon" />',
+      '<img src="images/right.png" alt="icon" />',
+    ],
+    responsive: {
+      0: {
+        items: 2,
+      },
+      600: {
+        items: 3,
+      },
+      1200: {
+        items: 4,
+      },
+    },
+  });
+
+  $(".banner-slider").owlCarousel({
+    loop: true,
+    margin: 15,
+    nav: false,
+    autoplay: true,
+    dots: true,
+    items: 1,
+  });
+}

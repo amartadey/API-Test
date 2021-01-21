@@ -1,4 +1,4 @@
-$(document).ready(function () {
+window.addEventListener("load", function () {
   "use strict";
 
   PageScroll();
@@ -35,14 +35,6 @@ $(document).ready(function () {
     },
   });
 
-  $(".banner-slider").owlCarousel({
-    loop: true,
-    margin: 15,
-    nav: false,
-    autoplay: true,
-    dots: true,
-    items: 1,
-  });
   $(".feedback-slider").owlCarousel({
     loop: true,
     margin: 15,
@@ -50,30 +42,6 @@ $(document).ready(function () {
     autoplay: true,
     dots: true,
     items: 1,
-  });
-
-  $(".slide-slider").owlCarousel({
-    loop: true,
-    margin: 15,
-    nav: true,
-    autoplay: false,
-    dots: false,
-    items: 4,
-    navText: [
-      '<img src="../images/left.png" alt="icon" />',
-      '<img src="../images/right.png" alt="icon" />',
-    ],
-    responsive: {
-      0: {
-        items: 2,
-      },
-      600: {
-        items: 3,
-      },
-      1200: {
-        items: 4,
-      },
-    },
   });
 
   $(".slide-slider-full").owlCarousel({

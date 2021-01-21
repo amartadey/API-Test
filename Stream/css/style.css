@@ -13096,6 +13096,7 @@ label.error {
   font-weight: 600;
   color: #fff;
   margin-bottom: 10px;
+  height: 42px;
 }
 @media only screen and (max-width: 576px) {
   .slide-wrapper .slide-one .slide-content h2 {
