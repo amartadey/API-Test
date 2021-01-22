@@ -1,0 +1,22 @@
+const friend = {
+  name: "Laurance Svekis",
+  age: 40,
+  gender: "male",
+  location: {
+    city: "Toronto",
+    country: "Canada",
+    address: "100 Main St",
+  },
+};
+console.log(friend.location.country);
+console.log(friend["location"]["country"]);
+
+const friendList = ["Laurence", "John", "Steve", "Linda", "Jane"];
+
+const newArray = [];
+
+friendList.forEach((friend) => {
+  newArray.push({ friend: friend });
+});
+
+console.log(newArray);
